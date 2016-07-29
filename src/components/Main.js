@@ -1,22 +1,28 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
 
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux';
 
-let yeomanImage = require('../images/yeoman.png');
+//let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
   render() {
+    const { store } = this.props;
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-      </div>
+      <Provider store={store}>
+        <div>test</div>
+      </Provider>
     );
   }
 }
 
 AppComponent.defaultProps = {
+};
+
+AppComponent.propTypes = {
+  store: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export default AppComponent;
