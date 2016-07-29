@@ -17,6 +17,7 @@ var finalCreateStore = applyMiddleware(trunkMiddleware)(createStore);
 
 function rootStore() {
   const store = finalCreateStore(defaultReducer);
+
   return store;
 }
 

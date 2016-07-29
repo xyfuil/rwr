@@ -13,7 +13,7 @@ class AppComponent extends React.Component {
       <Provider store={store}>
         <div>
           <img src={yeomanImage} alt="image"/>
-          <div>test</div>
+          <div>{store.getState().count}</div>
         </div>
       </Provider>
     );

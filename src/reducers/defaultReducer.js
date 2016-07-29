@@ -1,12 +1,12 @@
 function defaultReducer(state, action) {
 
   if (typeof state === 'undefined'){
-    state = {};
+    state = {count: 1};
   }
 
   switch (action.type) {
-    case 'SAY_SOMETHING':
-      state.message = action.value;
+    case 'ADD':
+      state.count++;
       return state;
     default:
       return state
